@@ -1,0 +1,2 @@
+#!/bin/bash
+nvcc -o bin/$1 -I NVIDIA_CUDA-11.0/common/inc src/${1}.cu 
