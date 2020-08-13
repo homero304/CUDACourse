@@ -1,6 +1,10 @@
 requirements:
   Ubuntu 20.04 OS
   install Cuda 11.0 - reference: https://docs.nvidia.com/cuda/
+  NVIDIA compatible GPU
+    To check GPU:
+      short info: lspci | grep VGA
+      detailed info: sudo lshw -C video 
 
 # set executable permission to helper scripts
 chmod +x ./compile
