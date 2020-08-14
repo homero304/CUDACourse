@@ -18,11 +18,14 @@ int main()
   // Imagine a big cube composed of smaller cubes if x=y=z
   // Or some other shape for x!=y!=z
 
+  // to check thread count limitations in X Y Z for blocks and the grid,
+  // compile and run ./deviceQuery from CUDA Samples
 	int threads_count_in_x_axis;
 	threads_count_in_x_axis = 1; // In this example, we are using only one thread
-
+  // block limitations example -- X <= 1024, Y <= 1024, Z <= 64  --- X * Y * Z <= 1024
   // number of threads per block
 	dim3 block(threads_count_in_x_axis); // axes: x, y, z
+  // grid limitations example -- X <= 2147483647, Y <= 65535, Z <= 65535 -- X * Y * Z <= 2147483647
   // number of blocks in grid
 	dim3 grid(threads_count_in_x_axis / block.x); // axes: x, y, z
 
